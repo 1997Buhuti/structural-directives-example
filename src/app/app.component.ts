@@ -5,14 +5,14 @@ import { Component } from "@angular/core";
   template: `
     <main>
       <h1>Structural Directives</h1>
-      <section *hideAfter="5000 as time; then placeholder; let counter = counter; let default" class="banner primary">
+      <div *hideAfter="5000; then optional" class="banner primary">
         <h2>Temporary content</h2>
-        <p>This layout should disappear in {{default}} seconds. It disappears in: {{counter}}</p>
-      </section>
-      <ng-template #placeholder let-hiddenAfter="hideAfter" let-myDefault>
+        <p>This layout should disappear in 5 seconds. It disappears</p>
+      </div>
+      <ng-template #optional>
         <section class="banner placeholder">
           <h2>Placeholder</h2>
-          <p>Here was some content. It was visible for {{hiddenAfter}} seconds.</p>
+          <p>Here is some content.</p>
         </section>
       </ng-template>
     </main>
